@@ -14,6 +14,8 @@ To install the plugin, enter your virtualenv and load the source:
 .. code-block:: bash
 
     $ pip install ckanext-oauth2
+    # or
+    $ pip install git+https://github.com/etalab/ckanext-oauth2.git
 
 Add the following to your CKAN .ini file:
 
@@ -34,6 +36,9 @@ Update your who.ini to make use of OAuth2:
     client_secret = client-secret
     scope = profile another.scope
     rememberer_name = fake
+    profile_api_url = https://auth.domain.com/api/me
+    profile_api_user_field = username
+
 
     [plugin:fake]
     use = ckanext.oauth2.tests.utils:FakeRememberer
